@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Civil Service Exam Practice Test - Pretest 2 (Error Recognition)</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+  .question {
+    margin-bottom: 20px;
+  }
+  .answers {
+    list-style: none;
+    padding: 0;
+  }
+  .answers li {
+    margin: 5px 0;
+  }
+  .submit-btn {
+    margin-top: 20px;
+  }
+  .result, .explanation {
+    margin-top: 30px;
+    padding: 15px;
+    border-top: 2px solid #ccc;
+  }
+  .correct { color: green; }
+  .incorrect { color: red; }
+  .advertisement img {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto 15px;
+    border-radius: 5px;
+  }
+  .underlined {
+    position: relative;
+    display: inline-block;
+  }
+  .underlined::after {
+    content: attr(data-label);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7em;
+    font-weight: bold;
+    margin-top: 1px;
+  }
+</style>
+</head>
+<body>
+
+<h1>CIVIL SERVICE EXAM PRETEST 2</h1>
+<h3>CREATED BY: CSE LEARNING ESSENTIALS</h3>
+<h2>SECTION 1: VERBAL ABILITY</h2>
+<h3>PART 3: ERROR RECOGNITION</h3>
+<p><strong>10-ITEM TEST</strong> | <strong>PASSING SCORE: 8</strong></p>
+
+<p><em>Directions:</em> For each sentence, choose the word or phrase that must be removed or replaced in order to make the sentence grammatically correct. Choose the option E if the sentence has no errors.</p>
+
+<form id="quiz-form">
+  <div id="questions-container"></div>
+  <div class="submit-btn">
+    <button type="button" onclick="submitQuiz()">Submit</button>
+  </div>
+</form>
+
+<div id="result" class="result"></div>
+<div id="explanation" class="explanation" style="display:none;"></div>
+
+<div class="social-link">
+  <p>Follow us on <a href="https://www.facebook.com/cselearningessentials/" target="_blank">Facebook</a> for more updates!</p>
+  <p>Subscribe to our YouTube Channel <a href="https://www.youtube.com/@cselearningessentialsph2023" target="_blank">here</a> for more content!</p>
+</div>
+
+<div class="advertisement">
+  <img src="images/advertisement.png" alt="Civil Service Exam Reviewer E-book">
+  <p>Avail our latest Civil Service Exam Reviewer E-books. Direct message us for more details!</p>
+</div>
+
+<script>
+const questions = [
+{
+sentence:`1. The <span class="underlined" data-label="A"><u>list</u></span> of candidates <span class="underlined" data-label="B"><u>are</u></span> posted <span class="underlined" data-label="C"><u>on</u></span> the <span class="underlined" data-label="D"><u>principal’s</u></span> office bulletin board.`,
+options:["A. list","B. are","C. on","D. principal’s","E. NO ERROR"],
+correct:"B",
+topic:"Subject-Verb Agreement",
+explanation:"The list (singular) requires is, not are.",
+correction:"The list of candidates is posted on the bulletin board outside the principal’s office."
+},
+{
+sentence:`2. Neither the <span class="underlined" data-label="A"><u>teacher</u></span> nor the students <span class="underlined" data-label="B"><u>was</u></span> <span class="underlined" data-label="C"><u>prepared</u></span> <span class="underlined" data-label="D"><u>for</u></span> the power interruption.`,
+options:["A. Neither","B. was","C. prepared","D. for","E. NO ERROR"],
+correct:"B",
+topic:"Subject-Verb Agreement (Neither…nor)",
+explanation:"The verb agrees with the nearer subject (students → plural → were).",
+correction:"Neither the teacher nor the students were prepared for the power interruption."
+},
+{
+sentence:`3. Each <span class="underlined" data-label="A"><u>of</u></span> the <span class="underlined" data-label="B"><u>contestants</u></span> <span class="underlined" data-label="C"><u>were</u></span> <span class="underlined" data-label="D"><u>given</u></span> a certificate after the competition.`,
+options:["A. of","B. contestants","C. were","D. given","E. NO ERROR"],
+correct:"C",
+topic:"Subject-Verb Agreement",
+explanation:"Each is singular, so the verb should be was.",
+correction:"Each of the contestants was given a certificate after the competition."
+},
+{
+sentence:`4. She was very <span class="underlined" data-label="A"><u>tired</u></span> last night, so she <span class="underlined" data-label="B"><u>decided</u></span> <span class="underlined" data-label="C"><u>to laid</u></span> down <span class="underlined" data-label="D"><u>early</u></span>.`,
+options:["A. tired","B. decided","C. to laid","D. early","E. NO ERROR"],
+correct:"C",
+topic:"Verb Forms (Infinitive)",
+explanation:"Correct infinitive form is to lie, not to laid.",
+correction:"She was very tired last night, so she decided to lie down early."
+},
+{
+sentence:`5. The <span class="underlined" data-label="A"><u>committee</u></span> <span class="underlined" data-label="B"><u>have</u></span> <span class="underlined" data-label="C"><u>agreed to postpone</u></span> the meeting <span class="underlined" data-label="D"><u>until</u></span> next week.`,
+options:["A. committee","B. have","C. to postpone","D. until","E. NO ERROR"],
+correct:"B",
+topic:"Collective Noun – Singular Sense",
+explanation:"Committee (as a single unit) takes singular verb has.",
+correction:"The committee has agreed to postpone the meeting until next week."
+},
+{
+sentence:`6. The <span class="underlined" data-label="A"><u>manager</u></span>, together <span class="underlined" data-label="B"><u>with</u></span> the employees, <span class="underlined" data-label="C"><u>are</u></span> <span class="underlined" data-label="D"><u>attending</u></span> the seminar today.`,
+options:["A. manager","B. with","C. are","D. attending","E. NO ERROR"],
+correct:"C",
+topic:"Subject-Verb Agreement",
+explanation:"The main subject is manager (singular), so the verb should be is.",
+correction:"The manager, together with the employees, is attending the seminar today."
+},
+{
+sentence:`7. The child <span class="underlined" data-label="A"><u>has</u></span> <span class="underlined" data-label="B"><u>went</u></span> to the park <span class="underlined" data-label="C"><u>before</u></span> his parents <span class="underlined" data-label="D"><u>arrived</u></span>.`,
+options:["A. has","B. went","C. before","D. arrived","E. NO ERROR"],
+correct:"B",
+topic:"Verb Tense (Past Participle)",
+explanation:"After has, the past participle gone is required.",
+correction:"The child has gone to the park before his parents arrived."
+},
+{
+sentence:`8. The <span class="underlined" data-label="A"><u>information</u></span> provided <span class="underlined" data-label="B"><u>by</u></span> the witnesses <span class="underlined" data-label="C"><u>were</u></span> <span class="underlined" data-label="D"><u>helpful</u></span> to the investigation.`,
+options:["A. information","B. by","C. were","D. helpful","E. NO ERROR"],
+correct:"C",
+topic:"Subject-Verb Agreement (Uncountable Noun)",
+explanation:"Information is uncountable and singular → use was.",
+correction:"The information provided by the witnesses was accurate and helpful to the investigation."
+},
+{
+sentence:`9. <span class="underlined" data-label="A"><u>If</u></span> I <span class="underlined" data-label="B"><u>was</u></span> you, I would <span class="underlined" data-label="C"><u>reconsider</u></span> the offer carefully before <span class="underlined" data-label="D"><u>deciding</u></span>.`,
+options:["A. If","B. was","C. reconsider","D. deciding","E. NO ERROR"],
+correct:"B",
+topic:"Subjunctive Mood",
+explanation:"Hypothetical situations require were, not was.",
+correction:"If I were you, I would reconsider the offer carefully before deciding."
+},
+{
+sentence:`10. Neither of the two <span class="underlined" data-label="A"><u>solutions</u></span> <span class="underlined" data-label="B"><u>seem</u></span> <span class="underlined" data-label="C"><u>to be effective</u></span> in <span class="underlined" data-label="D"><u>solving</u></span> the problem.`,
+options:["A. solutions","B. seem","C. to be effective","D. solving","E. NO ERROR"],
+correct:"C",
+topic:"Subject-Verb Agreement",
+explanation:"Neither is singular → verb should be seems.",
+correction:"Neither of the two solutions seems to be effective in solving the problem."
+}
+];
+
+const container = document.getElementById("questions-container");
+
+questions.forEach((q, idx) => {
+  const num = idx + 1;
+  let html = `<div class='question'><p><strong>${q.sentence}</strong></p><ul class='answers'>`;
+  q.options.forEach(opt => {
+    const letter = opt[0];
+    html += `<li><label><input type='radio' name='q${num}' value='${letter}'> ${opt}</label></li>`;
+  });
+  html += `</ul></div>`;
+  container.innerHTML += html;
+});
+
+function submitQuiz() {
+  let score = 0, resultHTML = '', explanationHTML = '<h3>Answer Explanations:</h3><ol>';
+  const unanswered = [];
+
+  questions.forEach((q, idx) => {
+    const num = idx + 1;
+    const selected = document.querySelector(`input[name='q${num}']:checked`);
+    const answer = q.correct;
+
+    if (!selected) {
+      unanswered.push(num);
+      return;
+    }
+
+    if (selected.value === answer) {
+      resultHTML += `<p class='correct'>Q${num}: Correct ✅</p>`;
+      score++;
+    } else {
+      resultHTML += `<p class='incorrect'>Q${num}: Incorrect ❌. Correct answer: ${answer}</p>`;
+    }
+
+    explanationHTML += `
+    <li>
+      <strong>Answer:</strong> ${answer}<br>
+      <strong>Topic:</strong> ${q.topic}<br>
+      <strong>Explanation:</strong> ${q.explanation}<br>
+      <em>Correct Sentence:</em> ${q.correction}
+    </li>`;
+  });
+
+  if (unanswered.length > 0) {
+    alert(`Please answer all questions. Missing: ${unanswered.join(", ")}`);
+    return;
+  }
+
+  explanationHTML += '</ol>';
+
+  let status = score >= 8 ? "Passed ✅" : "Failed ❌";
+  document.getElementById("result").innerHTML = `<h3>Your Score: ${score}/10 - ${status}</h3>${resultHTML}`;
+  document.getElementById("explanation").innerHTML = explanationHTML;
+  document.getElementById("explanation").style.display = "block";
+  document.getElementById("result").scrollIntoView({ behavior: "smooth" });
+}
+</script>
+
+</body>
+</html>
